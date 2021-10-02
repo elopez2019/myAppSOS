@@ -1,9 +1,62 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-center">Agregar Contacto</ion-title>
+    <ion-title>Agregar Contacto</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
 
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input formControlName="name" type="text"></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+      Nombre es requerido.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.minlength">
+      Nombre necesita al menos 2 caracteres.
+    </span>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input formControlName="apellido" type="text"></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.apellido.errors?.required">
+      Apellido es requerido.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.apellido.errors?.minlength">
+      Apellido necesita al menos 2 caracteres.
+    </span>
+
+
+    <ion-item lines="full">
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+      Correo es requerido.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+      Proporcione una identificación de correo electrónico válida.
+    </span>
+    
+
+    <ion-item lines="full">
+      <ion-label position="floating">Celular</ion-label>
+      <ion-input maxlength="10" formControlName="mobile" type="text" required></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.required">
+      Numero celular es requerido.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.pattern">
+      Solo se permiten valores numéricos.
+    </span>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block">Guardar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>
