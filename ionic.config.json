@@ -1,0 +1,7 @@
+{
+  "name": "myAppSOS",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
