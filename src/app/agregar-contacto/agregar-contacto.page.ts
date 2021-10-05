@@ -39,7 +39,7 @@ export class AgregarContactoPage implements OnInit {
   submitForm() {
     this.isSubmitted = true;
     if (!this.ionicForm.valid) {
-      console.log('Please provide all the required values!')
+      console.log('Proporcione todos los valores requeridos!')
       return false;
     } else {
       console.log(this.ionicForm.value)
