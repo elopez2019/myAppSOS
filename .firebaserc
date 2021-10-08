@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "appsos-8a298": {
+      "hosting": {
+        "app": [
+          "appsos-8a298"
+        ]
+      }
+    }
+  }
+}

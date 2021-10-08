@@ -11,11 +11,14 @@ export class Tab3Page {
   ionicForm: FormGroup;
   isSubmitted = false;
 
+  public usuarios = [];
+
+
   constructor(public formBuilder: FormBuilder) {
 
    }
-
-   ngOnInit() {
+   
+  ngOnInit() {
     this.ionicForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       apellido: ['', [Validators.required, Validators.minLength(2)]],
@@ -29,28 +32,4 @@ export class Tab3Page {
       particulares: ['', [Validators.required, Validators.minLength(2)]]
     })
   }
-
-  getDate(e) {
-    let date = new Date(e.target.value).toISOString().substring(0, 10);
-    this.ionicForm.get('dob').setValue(date, {
-      onlyself: true
-    })
-  }
- 
-
-  get errorControl() {
-    return this.ionicForm.controls;
-  }
-
-  submitForm() {
-    this.isSubmitted = true;
-    if (!this.ionicForm.valid) {
-      console.log('Proporcione todos los valores requeridos!')
-      return false;
-    } else {
-      console.log(this.ionicForm.value)
-    }
-  }
-
-
 }
