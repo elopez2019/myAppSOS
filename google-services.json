@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "443715264962",
+    "project_id": "appsos-8a298",
+    "storage_bucket": "appsos-8a298.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443715264962:android:af3545d22dfec0ee20f65b",
+        "android_client_info": {
+          "package_name": "com.emilie.appsos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443715264962-0f9m6qcaqqo1ebhchvmhf67k6olobieq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmJdbkzlf1LCmm3cQBRY7iurrgzR43MMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443715264962-0f9m6qcaqqo1ebhchvmhf67k6olobieq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
