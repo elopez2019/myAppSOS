@@ -10,8 +10,24 @@ export class FirestoreService {
     public database: AngularFirestore
     ) { }
 
-  createUser() {
+  createUser(data: any, path: string, id: string) {
     console.log("crear usuarios");
-    //this.database.
+    const collection = this.database.collection(path);
+    return collection.doc(id).set(data);
   }
+
+  getUser(path: string, id: string) {
+    const collection = this.database.collection(path);
+    return collection.doc(id).valueChanges();
+  }
+
+  deleteUser(path: string, id: string) {
+      const collection = this.database.collection(path);
+      return collection.doc(id).delete();
+  }
+
+  updateUser(data: any, path: string, id: string) {
+    const collection = this.database.collection(path);
+    return collection.doc(id).update(data);
+}
 } 
